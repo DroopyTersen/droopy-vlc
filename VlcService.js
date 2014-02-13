@@ -1,5 +1,4 @@
 var HttpService = require("droopy-http"),
-	convertXmlToJs = require('xml2js').parseString,
 	VlcStatus = require("./VlcStatus"),
 	q = require("q");
 
