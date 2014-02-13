@@ -26,6 +26,16 @@ VlcService.prototype._statusRequest = function(command, value) {
 	return deferred.promise;
 };
 
+VlcService.prototype.launch = function(filepath) {
+	var url = this.baseUrl + "/play?filepath=" + filepath;
+	return this.get(url, {}, true);
+};
+
+VlcService.prototype.close = function(filepath) {
+	var url = this.baseUrl + "/stop";
+	return this.get(url, {}, true);
+};
+
 VlcService.prototype.status = function() {
 	return this._statusRequest();
 };
