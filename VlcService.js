@@ -1,7 +1,7 @@
 var HttpService = require("droopy-http"),
 	convertXmlToJs = require('xml2js').parseString,
+	VlcStatus = require("./VlcStatus"),
 	q = require("q");
-	models = require("../../models");
 
 var VlcService = function(url) {
 	this.baseUrl = url + "/requests/status.xml";
@@ -19,7 +19,7 @@ VlcService.prototype._statusRequest = function(command, value) {
 		}
 	}
 	this.get(url, {}, true).then(function(xml) {
-		var status = new models.VlcStatus(xml);
+		var status = new VlcStatus(xml);
 		deferred.resolve(status);
 	}).fail(function(){
 		deferred.reject(arguments);
