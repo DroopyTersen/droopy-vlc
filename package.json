@@ -1,6 +1,6 @@
 {
   "name": "droopy-vlc",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Node wrapper for VLC http endpoints",
   "main": "VlcService.js",
   "scripts": {
