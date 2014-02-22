@@ -26,15 +26,6 @@ VlcService.prototype._statusRequest = function(command, value) {
 	return deferred.promise;
 };
 
-VlcService.prototype.launch = function(filepath) {
-	var url = this.baseUrl + "/play?filepath=" + filepath;
-	return this.get(url, {}, true);
-};
-
-VlcService.prototype.close = function(filepath) {
-	var url = this.baseUrl + "/stop";
-	return this.get(url, {}, true);
-};
 
 VlcService.prototype.status = function() {
 	return this._statusRequest();
@@ -48,6 +39,12 @@ VlcService.prototype.volume = function(volume) {
 	var v = ((volume * 512) / 200).toFixed(0);
 	return this._statusRequest("volume", v);
 };
+
+VlcService.prototype.fullscreen = function() {
+	return this._statusRequest("fullscreen");
+};
+
+
 VlcService.prototype.togglePause = function() {
 	return this._statusRequest("pl_pause");
 };
