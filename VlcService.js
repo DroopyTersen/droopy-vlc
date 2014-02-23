@@ -49,4 +49,8 @@ VlcService.prototype.togglePause = function() {
 	return this._statusRequest("pl_pause");
 };
 
+VlcService.prototype.rate = function(value) {
+	return this._statusRequest("rate", value);
+};
+
 module.exports = VlcService;
