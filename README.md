@@ -91,6 +91,68 @@ vlcService.rate(3).then(function(status) {
 	console.log(status);
 });
 ```
+####next()
+Next song in the playlist.
+```javascript
+vlcService.next().then(function(status) {
+	console.log(status);
+});
+```
+####previous()
+Previous song in the playlist.
+```javascript
+vlcService.previous().then(function(status) {
+	console.log(status);
+});
+```
+####play(id)
+Play song  by id in the playlist.
+```javascript
+vlcService.play().then(function(status) {
+	console.log(status);
+});
+```
+####deleteItem(id)
+Remove song  by id in the playlist.
+```javascript
+vlcService.deleteItem().then(function(status) {
+	console.log(status);
+});
+```
+####empty()
+Remove all song in the playlist.
+```javascript
+vlcService.empty().then(function(status) {
+	console.log(status);
+});
+```
+
+####playlist()
+Return the actual playlist
+[{
+	name : String,
+	duration : Number,
+	id : Number},...
+]
+```javascript
+vlcService.playlist().then(function(vlcPlaylist) {
+	console.log(vlcPlaylist);
+});
+```
+####loop()
+Repeat the entire playlist
+```javascript
+vlcService.loop().then(function(status) {
+	console.log(status);
+});
+```
+####repeat()
+Repeat the last song
+```javascript
+vlcService.repeat().then(function(status) {
+	console.log(status);
+});
+```
 
 ## Enabling VLC Http Endpoint
 
